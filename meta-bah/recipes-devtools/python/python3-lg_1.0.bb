@@ -1,8 +1,8 @@
 SUMMARY = "lg (lgpio)"
 DESCRIPTION = "Adds lgpio library to the layer"
 SECTION = "libs"
-LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=660e614bc7efb0697cc793d8a22a55c2"
+LICENSE = "Unlicense"
+LIC_FILES_CHKSUM = "file://UNLICENCE;md5=61287f92700ec1bdf13bc86d8228cd13"
 DEPENDS += "\
     python3-setuptools-native \
     python3-setuptools-scm \
