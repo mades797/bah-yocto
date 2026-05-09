@@ -1,0 +1,19 @@
+From 194b84f41c92592f8797de5748c530d4884bf4db Mon Sep 17 00:00:00 2001
+From: Maxime Deslauriers <maxime.deslauriers.1@ulaval.ca>
+Date: Fri, 24 Apr 2026 07:32:32 -0400
+Subject: [PATCH] Added result_flattening feature
+Upstream-Status: Inappropriate [other]
+
+---
+ pisugar-server/src/main.rs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/pisugar-server/src/main.rs b/pisugar-server/src/main.rs
+index 9c83886..f571336 100644
+--- a/pisugar-server/src/main.rs
++++ b/pisugar-server/src/main.rs
+@@ -1,3 +1,4 @@
++#![feature(result_flattening)]
+ use std::env;
+ use std::sync::Arc;
+ use std::sync::Mutex as StdMutex;

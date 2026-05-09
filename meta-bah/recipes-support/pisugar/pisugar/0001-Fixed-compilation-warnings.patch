@@ -1,0 +1,45 @@
+From 0b943da64252b834ba2af5e06c32ede7931bb35b Mon Sep 17 00:00:00 2001
+From: Maxime Deslauriers <maxime.deslauriers.1@ulaval.ca>
+Date: Fri, 24 Apr 2026 07:31:57 -0400
+Subject: [PATCH] Fixed compilation warnings
+Upstream-Status: Inappropriate
+
+---
+ .cargo/config.toml         | 14 --------------
+ pisugar-server/src/cmds.rs |  2 +-
+ 2 files changed, 1 insertion(+), 15 deletions(-)
+ delete mode 100644 .cargo/config.toml
+
+diff --git a/.cargo/config.toml b/.cargo/config.toml
+deleted file mode 100644
+index 7e9a61a..0000000
+--- a/.cargo/config.toml
++++ /dev/null
+@@ -1,14 +0,0 @@
+-[source.crates-io]
+-replace-with = 'rsproxy-sparse'
+-
+-[source.rsproxy]
+-registry = "https://rsproxy.cn/crates.io-index"
+-
+-[source.rsproxy-sparse]
+-registry = "sparse+https://rsproxy.cn/index/"
+-
+-[registries.rsproxy]
+-index = "https://rsproxy.cn/crates.io-index"
+-
+-[net]
+-git-fetch-with-cli = true
+diff --git a/pisugar-server/src/cmds.rs b/pisugar-server/src/cmds.rs
+index b282a47..4c31382 100644
+--- a/pisugar-server/src/cmds.rs
++++ b/pisugar-server/src/cmds.rs
+@@ -360,7 +360,7 @@ pub async fn handle_request(core: Arc<Mutex<PiSugarCore>>, req: &str) -> Response
+                         GetCmds::SoftPoweroffShell => Ok(core.config().soft_poweroff_shell.clone().unwrap_or_default()),
+                         GetCmds::Temperature => core.get_temperature().map(|x| x.to_string()),
+                         GetCmds::InputProtect => core.input_protected().map(|x| x.to_string()),
+-                        GetCmds::ButtonShell { mode } => unreachable!(),
++                        GetCmds::ButtonShell { mode: _ } => unreachable!(),
+                     };
+                     (vec![], r)
+                 }

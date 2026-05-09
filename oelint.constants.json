@@ -1,0 +1,8 @@
+{
+    "$imports": ["meta-bah"],
+    "variables": {
+    "known": [
+      "FETCHCMD_wget"
+    ]
+  }
+}

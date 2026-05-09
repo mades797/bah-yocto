@@ -1,0 +1,44 @@
+From acc3753925d74c55df203285d6dad30cd469ba52 Mon Sep 17 00:00:00 2001
+From: Maxime Deslauriers <maxime.deslauriers.1@ulaval.ca>
+Date: Wed, 29 Apr 2026 11:55:29 -0400
+Subject: [PATCH] Removed strip
+Upstream-Status: Inappropriate
+
+---
+ Makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 44c3a56..5827cee 100644
+--- a/Makefile
++++ b/Makefile
+@@ -89,11 +89,11 @@ rgpio.o: rgpio.c lgpio.h lgCmd.h rgpio.h
+
+ rgpiod:	rgpiod.o $(OBJ_RGPIOD) $(LIB_LGPIO)
+ 	$(CC) $(LDFLAGS) -o rgpiod rgpiod.o $(OBJ_RGPIOD) $(LINK_LGPIO)
+-	$(STRIP) rgpiod
++# 	$(STRIP) rgpiod
+
+ rgs:	rgs.o $(OBJ_RGS)
+ 	$(CC) $(LDFLAGS) -o rgs rgs.o $(OBJ_RGS)
+-	$(STRIP) rgs
++# 	$(STRIP) rgs
+
+ DOC/.docs: $(DOCS)
+ 	@[ -d "DOC" ] && cd DOC && ./cdoc || echo "*** No DOC directory ***"
+@@ -170,13 +170,13 @@ endif
+ $(LIB_LGPIO):	$(OBJ_LGPIO)
+ 	$(SHLIB) -pthread $(LDFLAGS) -Wl,-soname,$(LIB_LGPIO).$(SOVERSION) -o $(LIB_LGPIO).$(SOVERSION) $(OBJ_LGPIO)
+ 	ln -fs $(LIB_LGPIO).$(SOVERSION) $(LIB_LGPIO)
+-	$(STRIPLIB) $(LIB_LGPIO)
++# 	$(STRIPLIB) $(LIB_LGPIO)
+ 	$(SIZE)     $(LIB_LGPIO)
+
+ $(LIB_RGPIO):	$(OBJ_RGPIO)
+ 	$(SHLIB) -pthread $(LDFLAGS) -Wl,-soname,$(LIB_RGPIO).$(SOVERSION) -o $(LIB_RGPIO).$(SOVERSION) $(OBJ_RGPIO)
+ 	ln -fs $(LIB_RGPIO).$(SOVERSION) $(LIB_RGPIO)
+-	$(STRIPLIB) $(LIB_RGPIO)
++# 	$(STRIPLIB) $(LIB_RGPIO)
+ 	$(SIZE)     $(LIB_RGPIO)
+
+ # generated using gcc -MM *.c

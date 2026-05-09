@@ -1,0 +1,23 @@
+From b111fd2c12f9dd7b339b36d3f1ee12731d83c958 Mon Sep 17 00:00:00 2001
+From: Maxime Deslauriers <maxime.deslauriers.1@ulaval.ca>
+Date: Sat, 11 Apr 2026 13:11:14 -0400
+Subject: [PATCH] Corrected license field in pyproject.toml
+Upstream-Status: Inappropriate TODO
+
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/git/pyproject.toml b/git/pyproject.toml
+index c3c4d93..263bd03 100644
+--- a/git/pyproject.toml
++++ b/git/pyproject.toml
+@@ -31,7 +31,7 @@ keywords = [
+     "lcd",
+     "displayio",
+ ]
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Intended Audience :: Developers",
+     "Topic :: Software Development :: Libraries",

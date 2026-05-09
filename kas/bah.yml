@@ -1,0 +1,42 @@
+---
+header:
+  version: 11
+machine: raspberrypi0-2w
+distro: bah
+target: bah
+repos:
+  meta-bah:
+    path: meta-bah
+  poky:
+    url: https://github.com/yoctoproject/poky
+    commit: 8643f911602949518c5c5474726b49f943e36b83
+    path: layers/poky
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+  meta-openembedded:
+    url:  https://github.com/openembedded/meta-openembedded
+    commit: 1ad0d777d1de1769e5995eb806f7ae5c15d0be54
+    path: layers/meta-openembedded
+    layers:
+      meta-oe:
+      meta-python:
+      meta-networking:
+  meta-raspberrypi:
+    url: https://github.com/agherzan/meta-raspberrypi
+    commit: 2c646d29912dcc873469a57b1c207e1549c5094d
+    path: layers/meta-raspberrypi
+  meta-lts-mixins:
+    url: https://github.com/nedap/meta-lts-mixins
+    commit: 65c51abe3871d50e599366765838d1478eba093e
+    path: layers/meta-lts-mixins
+env:
+  SSTATE_DIR: /hdd/yocto/sstate-cache
+  DL_DIR: /hdd/yocto/bb-downloads
+local_conf_header:
+  rm-work-conf: |
+    INHERIT += "rm_work"
+  version_pinning: |
+    PREFERRED_VERSION_libgpiod = "1.6.5"
+    RUST_CHANNEL = "nightly"

@@ -1,0 +1,23 @@
+From acecb833d789fd26fb345ba4d40ff2278f7218cd Mon Sep 17 00:00:00 2001
+From: Maxime Deslauriers <maxime.deslauriers.1@ulaval.ca>
+Date: Sat, 11 Apr 2026 11:42:29 -0400
+Subject: [PATCH] Corrected license fields in pyproject.toml
+Upstream-Status: Inappropriate TODO
+
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/git/pyproject.toml b/git/pyproject.toml
+index e586a46..052a419 100644
+--- a/git/pyproject.toml
++++ b/git/pyproject.toml
+@@ -28,7 +28,7 @@ keywords = [
+     "ssd1306",
+     "oled",
+ ]
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
+     "Intended Audience :: Developers",
+     "Topic :: Software Development :: Libraries",
