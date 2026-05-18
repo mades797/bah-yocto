@@ -23,12 +23,16 @@ IMAGE_INSTALL:append = " python3-gpiozero"
 IMAGE_INSTALL:remove = "rpi-gpio"
 IMAGE_INSTALL:append = " python3-rpi-lgpio"
 IMAGE_INSTALL:append = " python3-lg"
-IMAGE_INSTALL:append = " bash ncurses"
+IMAGE_INSTALL:append = " alsa-utils"
+IMAGE_INSTALL::append = " kernel-module-snd-bcm2835"
 
 # Debugging tools
 IMAGE_INSTALL:append = " nano"
 EXTRA_IMAGE_FEATURES:append = " package-management"
 IMAGE_INSTALL:append = " dpkg"
+IMAGE_INSTALL:append = " ldd"
+IMAGE_INSTALL:append = " procps"
+IMAGE_INSTALL:append = " raspi-gpio"
 
 EXTRA_IMAGE_FEATURES = "ssh-server-openssh allow-empty-password empty-root-password allow-root-login"
 FILESYSTEM_PERMS_TABLES:remove = "files/fs-perms-volatile-log.txt"

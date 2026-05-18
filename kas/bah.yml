@@ -23,6 +23,7 @@ repos:
       meta-oe:
       meta-python:
       meta-networking:
+      meta-multimedia:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi
     commit: 2c646d29912dcc873469a57b1c207e1549c5094d
@@ -34,9 +35,15 @@ repos:
 env:
   SSTATE_DIR: /hdd/yocto/sstate-cache
   DL_DIR: /hdd/yocto/bb-downloads
+  WIFI_SSID: null
+  WIFI_PASSWORD: null
 local_conf_header:
   rm-work-conf: |
     INHERIT += "rm_work"
   version_pinning: |
     PREFERRED_VERSION_libgpiod = "1.6.5"
     RUST_CHANNEL = "nightly"
+  custom-overlays: |
+    KERNEL_DEVICETREE:append = " overlays/pwm-2chan.dtbo"
+  passthrough: |
+    BB_ENV_PASSTHROUGH_ADDITIONS += "WIFI_SSID WIFI_PASSWORD"
