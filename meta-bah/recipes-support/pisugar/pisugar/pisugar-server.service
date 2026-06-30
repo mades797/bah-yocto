@@ -2,8 +2,8 @@
 Description=pisugar-server
 
 [Service]
-EnvironmentFile=/etc/default/pisugar-server
-ExecStart=/usr/bin/pisugar-server $OPTS
+#EnvironmentFile=/etc/default/pisugar-server
+ExecStart=/usr/bin/pisugar-server --model "PiSugar 2 (2-LEDs)" --uds /tmp/pisugar-server.sock
 ExecStop=/bin/kill $MAINPID
 ExecStopPost=/bin/rm -f /tmp/pisugar-server.sock
 Type=simple

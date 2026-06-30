@@ -1,0 +1,22 @@
+From d2fff7327af45a1f9571d9b3b7ed96df8fe05386 Mon Sep 17 00:00:00 2001
+From: Maxime Deslauriers <maxime.deslauriers.1@ulaval.ca>
+Date: Sun, 24 May 2026 08:52:06 -0400
+Subject: [PATCH] Corrected license field in pyproject.toml
+
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 0e79e80..fcdd070 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -28,7 +28,7 @@ keywords = [
+     "displayio",
+     "drawing",
+ ]
+-license = "MIT"
++license = { file = "LICENSE" }
+ classifiers = [
+     "Intended Audience :: Developers",
+     "Topic :: Software Development :: Libraries",

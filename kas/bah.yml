@@ -3,7 +3,7 @@ header:
   version: 11
 machine: raspberrypi0-2w
 distro: bah
-target: bah
+target: device
 repos:
   meta-bah:
     path: meta-bah
@@ -38,12 +38,20 @@ env:
   WIFI_SSID: null
   WIFI_PASSWORD: null
 local_conf_header:
+  licenses: |
+    LICENSE_FLAGS_ACCEPTED:append = " commercial commercial_ffmpeg"
   rm-work-conf: |
     INHERIT += "rm_work"
+  bah-parameters: |
+    BAH_SERVER_ADDRESS = "172.24.0.100"
+    BAH_SERVER_PATH = "/share"
+    BAH_MOUNT_PATH = "/mnt"
+    BAH_SERVER_USERNAME = "bah"
+    BAH_SERVER_PASSWORD = "bah"
   version_pinning: |
     PREFERRED_VERSION_libgpiod = "1.6.5"
     RUST_CHANNEL = "nightly"
   custom-overlays: |
-    KERNEL_DEVICETREE:append = " overlays/pwm-2chan.dtbo"
+    KERNEL_DEVICETREE:append = " overlays/rpi-codeczero.dtbo"
   passthrough: |
     BB_ENV_PASSTHROUGH_ADDITIONS += "WIFI_SSID WIFI_PASSWORD"
