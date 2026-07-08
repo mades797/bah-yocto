@@ -25,6 +25,7 @@ IMAGE_INSTALL:append = " python3-adafruit-displayio"
 IMAGE_INSTALL:append = " python3-adafruit-display-text"
 IMAGE_INSTALL:append = " python3-adafruit-bitmap-font"
 IMAGE_INSTALL:append = " python3-adafruit-shapes"
+IMAGE_INSTALL:append = " python3-adafruit-extended-bus"
 IMAGE_INSTALL:append = " libgpiod"
 IMAGE_INSTALL:append = " i2c-tools"
 IMAGE_INSTALL:append = " pisugar"
@@ -32,25 +33,13 @@ IMAGE_INSTALL:append = " python3-gpiozero"
 IMAGE_INSTALL:remove = "rpi-gpio"
 IMAGE_INSTALL:append = " python3-rpi-lgpio"
 IMAGE_INSTALL:append = " python3-lg"
-IMAGE_INSTALL:append = " python3-dev"
 IMAGE_INSTALL:append = " alsa-utils"
-IMAGE_INSTALL:append = " alsa-utils-alsactl"
-IMAGE_INSTALL:append = " alsa-plugins"
-IMAGE_INSTALL:append = " alsa-state"
 IMAGE_INSTALL:append = " kernel-module-snd-bcm2835"
 IMAGE_INSTALL:append = " bah"
+IMAGE_INSTALL:append = " rpidistro-vlc"
 IMAGE_INSTALL:append = " cifs-utils"
 IMAGE_INSTALL:append = " iw"
-IMAGE_INSTALL:append = " vlc"
-IMAGE_INSTALL:append = " gstreamer1.0 \
-                         gstreamer1.0-plugins-base \
-                         gstreamer1.0-plugins-good \
-                         gstreamer1.0-plugins-bad \
-                         gstreamer1.0-python"
-
-IMAGE_INSTALL:append = " mpg123 ffmpeg"
-
-SYSTEMD_AUTO_ENABLE:remote-fs = "enable"
+IMAGE_INSTALL:append = " python3-python-vlc"
 
 # Debugging tools
 IMAGE_INSTALL:append = " nano"
@@ -69,4 +58,3 @@ FILESYSTEM_PERMS_TABLES:remove = "files/fs-perms-volatile-log.txt"
 FILESYSTEM_PERMS_TABLES:remove = "files/fs-perms-volatile-tmp.txt"
 
 SDKIMAGE_FEATURES += "nativesdk-python3-setuptools"
-IMAGE_INSTALL:append = " dtc"

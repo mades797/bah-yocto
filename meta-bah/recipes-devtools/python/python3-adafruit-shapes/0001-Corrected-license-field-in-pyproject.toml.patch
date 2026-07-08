@@ -2,6 +2,7 @@ From d2fff7327af45a1f9571d9b3b7ed96df8fe05386 Mon Sep 17 00:00:00 2001
 From: Maxime Deslauriers <maxime.deslauriers.1@ulaval.ca>
 Date: Sun, 24 May 2026 08:52:06 -0400
 Subject: [PATCH] Corrected license field in pyproject.toml
+Upstream-Status: Inappropriate
 
 ---
  pyproject.toml | 2 +-

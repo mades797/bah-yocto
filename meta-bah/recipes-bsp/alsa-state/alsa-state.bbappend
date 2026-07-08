@@ -4,6 +4,6 @@ SRC_URI += "\
 "
 
 do_install:append() {
-    install -d ${D}/var/lib/alsa
-    install -m 0644 ${WORKDIR}/asound.state ${D}/var/lib/alsa/asound.state
+    install -d ${D}${localstatedir}/lib/alsa
+    install -m 0644 ${WORKDIR}/asound.state ${D}${localstatedir}/lib/alsa/asound.state
 }

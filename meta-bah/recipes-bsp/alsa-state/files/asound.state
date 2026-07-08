@@ -42,7 +42,7 @@ state.Zero {
 	control.2 {
 		iface MIXER
 		name 'Mic 2 Volume'
-		value 5
+		value 0
 		comment {
 			access 'read write'
 			type INTEGER
@@ -50,14 +50,14 @@ state.Zero {
 			range '0 - 7'
 			dbmin -600
 			dbmax 3600
-			dbvalue.0 2400
+			dbvalue.0 -600
 		}
 	}
 	control.3 {
 		iface MIXER
 		name 'Aux Volume'
-		value.0 0
-		value.1 0
+		value.0 19
+		value.1 19
 		comment {
 			access 'read write'
 			type INTEGER
@@ -65,8 +65,8 @@ state.Zero {
 			range '0 - 63'
 			dbmin -5400
 			dbmax 1500
-			dbvalue.0 -5400
-			dbvalue.1 -5400
+			dbvalue.0 -5100
+			dbvalue.1 -5100
 		}
 	}
 	control.4 {
@@ -88,8 +88,8 @@ state.Zero {
 	control.5 {
 		iface MIXER
 		name 'ADC Volume'
-		value.0 114
-		value.1 114
+		value.0 112
+		value.1 112
 		comment {
 			access 'read write'
 			type INTEGER
@@ -97,8 +97,8 @@ state.Zero {
 			range '0 - 127'
 			dbmin -9999999
 			dbmax 1125
-			dbvalue.0 150
-			dbvalue.1 150
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.6 {
@@ -120,8 +120,8 @@ state.Zero {
 	control.7 {
 		iface MIXER
 		name 'Headphone Volume'
-		value.0 0
-		value.1 0
+		value.0 57
+		value.1 57
 		comment {
 			access 'read write'
 			type INTEGER
@@ -129,14 +129,14 @@ state.Zero {
 			range '0 - 63'
 			dbmin -5700
 			dbmax 600
-			dbvalue.0 -5700
-			dbvalue.1 -5700
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.8 {
 		iface MIXER
 		name 'Lineout Volume'
-		value 48
+		value 51
 		comment {
 			access 'read write'
 			type INTEGER
@@ -144,7 +144,7 @@ state.Zero {
 			range '0 - 63'
 			dbmin -4800
 			dbmax 1500
-			dbvalue.0 0
+			dbvalue.0 300
 		}
 	}
 	control.9 {
@@ -344,7 +344,7 @@ state.Zero {
 	control.24 {
 		iface MIXER
 		name 'Mic 2 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -354,8 +354,8 @@ state.Zero {
 	control.25 {
 		iface MIXER
 		name 'Aux Switch'
-		value.0 false
-		value.1 false
+		value.0 true
+		value.1 true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -387,8 +387,8 @@ state.Zero {
 	control.28 {
 		iface MIXER
 		name 'Headphone Switch'
-		value.0 false
-		value.1 false
+		value.0 true
+		value.1 true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -398,7 +398,7 @@ state.Zero {
 	control.29 {
 		iface MIXER
 		name 'Lineout Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -512,8 +512,8 @@ state.Zero {
 	control.39 {
 		iface MIXER
 		name 'Headphone Gain Ramping Switch'
-		value.0 false
-		value.1 false
+		value.0 true
+		value.1 true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -523,7 +523,7 @@ state.Zero {
 	control.40 {
 		iface MIXER
 		name 'Lineout Gain Ramping Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -617,8 +617,8 @@ state.Zero {
 	control.48 {
 		iface MIXER
 		name 'DAC Mono Switch'
-		value.0 true
-		value.1 true
+		value.0 false
+		value.1 false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -908,7 +908,7 @@ state.Zero {
 	control.69 {
 		iface MIXER
 		name 'AUX Jack Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -944,7 +944,7 @@ state.Zero {
 	control.72 {
 		iface MIXER
 		name 'Mixin Left Aux Left Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -964,7 +964,7 @@ state.Zero {
 	control.74 {
 		iface MIXER
 		name 'Mixin Left Mic 2 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -984,7 +984,7 @@ state.Zero {
 	control.76 {
 		iface MIXER
 		name 'Mixin Right Aux Right Switch'
-		value false
+		value true
 		comment {
 			access 'read write'
 			type BOOLEAN
@@ -994,7 +994,7 @@ state.Zero {
 	control.77 {
 		iface MIXER
 		name 'Mixin Right Mic 2 Switch'
-		value true
+		value false
 		comment {
 			access 'read write'
 			type BOOLEAN
