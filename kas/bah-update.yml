@@ -1,0 +1,6 @@
+---
+header:
+  version: 11
+  includes:
+    - bah-base.yml
+target: update-image

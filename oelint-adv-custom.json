@@ -2,7 +2,10 @@
     "variables": {
         "known": [
             "CMDLINE",
-            "FETCHCMD_wget"
+            "FETCHCMD_wget",
+            "IMAGE_DEPENDS",
+            "SWUPDATE_IMAGES",
+            "SWUPDATE_IMAGES_FSTYPES"
         ]
     }
 }

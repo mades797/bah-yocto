@@ -3,7 +3,6 @@ header:
   version: 11
 machine: raspberrypi0-2w
 distro: bah
-target: device
 repos:
   meta-bah:
     path: meta-bah
@@ -15,6 +14,10 @@ repos:
       meta:
       meta-poky:
       meta-yocto-bsp:
+  meta-swupdate:
+    url: https://github.com/sbabic/meta-swupdate
+    commit: 438e8ea2d98aa5fd5f571f84db154dbe9062b37a
+    path: layers/meta-swupdate
   meta-openembedded:
     url:  https://github.com/openembedded/meta-openembedded
     commit: 1ad0d777d1de1769e5995eb806f7ae5c15d0be54
@@ -44,7 +47,7 @@ local_conf_header:
     INHERIT += "rm_work"
   bah-parameters: |
     BAH_SERVER_ADDRESS = "172.24.0.100"
-    BAH_SERVER_PATH = "/share"
+    BAH_SERVER_PATH = "/bah"
     BAH_MOUNT_PATH = "/mnt"
     BAH_SERVER_USERNAME = "bah"
     BAH_SERVER_PASSWORD = "bah"
@@ -55,3 +58,12 @@ local_conf_header:
     KERNEL_DEVICETREE:append = " overlays/rpi-codeczero.dtbo"
   passthrough: |
     BB_ENV_PASSTHROUGH_ADDITIONS += "WIFI_SSID WIFI_PASSWORD"
+  graphics: |
+    VC4DTBO = "vc4-fkms-v3d,noaudio"
+  swupdate: |
+    WIC_CREATE_EXTRA_ARGS = "--no-fstab-update"
+    IMAGE_FSTYPES = "wic.bz2 wic.bmap ext4.gz"
+    PREFERRED_PROVIDER_u-boot-fw-utils = "libubootenv"
+    RPI_USE_U_BOOT = "1"
+  disk: |
+    DATA_PART_UUID = "ec67a5b5-00d9-4388-89ac-8a71d5ab3fea"

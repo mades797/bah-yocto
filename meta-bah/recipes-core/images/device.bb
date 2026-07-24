@@ -9,7 +9,7 @@ CVE_PRODUCT = "${BPN}"
 inherit core-image
 # inherit qemuboot
 # IMAGE_FSTYPES = "wic"
-WKS_FILE = "device.wks"
+WKS_FILE = "device.wks.in"
 
 COMPATIBLE_MACHINE = "raspberrypi0-2w"
 IMAGE_INSTALL:append = " dhcpcd"
@@ -40,6 +40,7 @@ IMAGE_INSTALL:append = " rpidistro-vlc"
 IMAGE_INSTALL:append = " cifs-utils"
 IMAGE_INSTALL:append = " iw"
 IMAGE_INSTALL:append = " python3-python-vlc"
+IMAGE_INSTALL:append = " swupdate"
 
 # Debugging tools
 IMAGE_INSTALL:append = " nano"
@@ -56,5 +57,4 @@ IMAGE_INSTALL:append = " psmisc"
 EXTRA_IMAGE_FEATURES = "ssh-server-openssh allow-empty-password empty-root-password allow-root-login"
 FILESYSTEM_PERMS_TABLES:remove = "files/fs-perms-volatile-log.txt"
 FILESYSTEM_PERMS_TABLES:remove = "files/fs-perms-volatile-tmp.txt"
-
 SDKIMAGE_FEATURES += "nativesdk-python3-setuptools"
