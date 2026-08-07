@@ -1,9 +1,8 @@
 [Unit]
 Description=BAH
-After=swupdate.service
 
 [Service]
-ExecStart=/usr/bin/bah
+ExecStart=/usr/bin/update.sh
 Type=simple
 
 [Install]

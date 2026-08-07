@@ -40,6 +40,7 @@ IMAGE_INSTALL:append = " rpidistro-vlc"
 IMAGE_INSTALL:append = " cifs-utils"
 IMAGE_INSTALL:append = " iw"
 IMAGE_INSTALL:append = " python3-python-vlc"
+IMAGE_INSTALL:append = " python3-systemd"
 IMAGE_INSTALL:append = " swupdate"
 
 # Debugging tools

@@ -4,10 +4,10 @@ SECTION = "app"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=d0c5aeb84cc8f2d4863f96e4424bed86"
 DEPENDS += "python3-setuptools-native python3-wheel-native"
-SRC_URI = "git:///home/maxime/bah/;protocol=file;branch=feature/vlc \
+SRC_URI = "git:///home/maxime/bah/;protocol=file;branch=main \
            file://bah.service \
 "
-SRCREV = "48acec9b36ffcbf2f4b3fffe19892de791651982"
+SRCREV = "86409945400f1441d312cdd0700355b3d29171d2"
 S = "${WORKDIR}/git"
 
 inherit systemd
